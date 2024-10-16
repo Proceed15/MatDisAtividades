@@ -1,44 +1,48 @@
 #include <stdio.h>
 
-// Declaração da função multiplica
+// Declaração das funções recursivas, fiz a de soma com a própria Main
+//Multiplica
 int multiplica(int num1, int num2);
+//Fatorial
 void fatorial(int n, int resultado);
+//Fibonacci
+void fibonacci(int n, int a, int b, int c, int p, int z);
 
 int main(void) {
   // Parte de Fatorial
-  int n = 0, a = 0, b = 1, c, i;
+  int n = 0, a = 0, b = 1, p = 0, z = 0, c, i;
   char resposta;
+  int num1 = 0, num2 = 0;
+  char v[] = " vezes ";
   do {
     do {
       printf("Digite o Número a ser Fatorado:\n");
       scanf("%d", &n);
       if (n < 0) {
-        printf("\nEsse Fatorial só é valido para números reais maiores que "
-               "zero\n");
+        printf("\nEsse Fatorial só é valido para números reais maiores que zero\n");
       } else {
         fatorial(n, 1);
       }
     } while (n < 0);
     // Parte de Fibonacci
-    printf("\n\nDigite o Número de Linhas da Sequência Fibonacci:\n");
-    scanf("%d", &n);
-    printf("Sequência Fibonacci: \n");
-    for (i = 0; i <= n; i++) {
-      printf("%d ", a);
-      c = a + b;
-      a = b;
-      b = c;
-    }
-    int p = a - b;
-    int z = p * -1;
-    printf("\nSaída do Último Termo: %d ", z);
+    do {
+      printf("\n\nDigite o Número de Linhas da Sequência Fibonacci:\n");
+      scanf("%d", &n);
+      if (n < 0) {
+        printf("\nEssa Fibonacci só é valida para números reais maiores que "zero\n");
+      } else {
+        fibonacci(n - 1, a = 1, b = 1, c = 0, p = 0, z = 0);
+        // n - 1 pois o primeiro número da sequência era 0, com a = 1 se torna 1 e incrementa 1 na sequência, que retiramos do resultado com -1
+        // Para imprimir o Zero: fibonacci(n, a = 0, b = 1, c = 0, p = 0, z = 0);
+      }
+    } while(n < 0);
     // Parte da Multiplicação Recursiva:
-    int num1 = 0, num2 = 0;
-    char v[] = " vezes ";
+  do{
     printf("\n\nDigite o Primeiro Número a ser Recursivo:\n");
     scanf("%d", &num1);
     printf("\nDigite o Segundo Número a ser Recursivo:\n");
     scanf("%d", &num2);
+  } while(num1 < 0 || num2 < 0);
     printf("Componentes da Multiplicação Recursiva:\n");
     printf("%d", num1);
     printf("%s", v);
@@ -46,7 +50,7 @@ int main(void) {
     printf("\n");
     printf("\nSaída da Multiplicação Recursiva:\n");
     printf("%d\n", multiplica(num1, num2));
-    // Parte da Soma Recursiva
+    // Parte da Soma Recursiva Usando For
     int rec, sum = 0;
     printf("\n\nDigite o Número a ser Recursivo:\n");
     scanf("%d", &rec);
@@ -91,10 +95,30 @@ void fatorial(int n, int resultado) {
   printf("\nSaída do Último Termo: %d ", resultado);
   // fatorial(n - 1, resultado * n);
 }
+void fibonacci(int n, int a, int b, int c, int p, int z) {
+  // Se 0 ou 1, 1
+  if (n == 0 || n == 1) {
+    printf("Fibonacci: %d\n", b);
+    return;
+  } else {
+    printf("Sequência Fibonacci: \n");
+    for (int i = 0; i <= n; i++) {
+      printf("%d ", a);
+      c = a + b;
+      a = b;
+      b = c;
+    }
+    int p = a - b;
+    int z = p * -1;
+    printf("\nSaída do Último Termo: %d ", z);
+  }
+}
 int multiplica(int num1, int num2) {
   // multiplicação por zero é zero
   if (num1 == 0 || num2 == 0) {
     return 0;
+  } else if (num1 == 1) {
+    return num2;
   } else if (num2 == 1) {
     return num1;
   } else {
