@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 // Declaração das funções recursivas, fiz a de soma com a própria Main
-//Multiplica
+// Multiplica
 int multiplica(int num1, int num2);
-//Fatorial
+// Fatorial
 void fatorial(int n, int resultado);
-//Fibonacci
+// Fibonacci
 void fibonacci(int n, int a, int b, int c, int p, int z);
 
 int main(void) {
@@ -19,7 +19,8 @@ int main(void) {
       printf("Digite o Número a ser Fatorado:\n");
       scanf("%d", &n);
       if (n < 0) {
-        printf("\nEsse Fatorial só é valido para números reais maiores que zero\n");
+        printf("\nEsse Fatorial só é valido para números reais maiores que "
+               "zero\n");
       } else {
         fatorial(n, 1);
       }
@@ -29,20 +30,22 @@ int main(void) {
       printf("\n\nDigite o Número de Linhas da Sequência Fibonacci:\n");
       scanf("%d", &n);
       if (n < 0) {
-        printf("\nEssa Fibonacci só é valida para números reais maiores que "zero\n");
+        printf("\nEssa Fibonacci só é valida para números reais maiores que "
+               "zero\n");
       } else {
         fibonacci(n - 1, a = 1, b = 1, c = 0, p = 0, z = 0);
-        // n - 1 pois o primeiro número da sequência era 0, com a = 1 se torna 1 e incrementa 1 na sequência, que retiramos do resultado com -1
-        // Para imprimir o Zero: fibonacci(n, a = 0, b = 1, c = 0, p = 0, z = 0);
+        // n - 1 pois o primeiro número da sequência era 0, com a = 1 se torna 1
+        // e incrementa 1 na sequência, que retiramos do resultado com -1 Para
+        // imprimir o Zero: fibonacci(n, a = 0, b = 1, c = 0, p = 0, z = 0);
       }
-    } while(n < 0);
+    } while (n < 0);
     // Parte da Multiplicação Recursiva:
-  do{
-    printf("\n\nDigite o Primeiro Número a ser Recursivo:\n");
-    scanf("%d", &num1);
-    printf("\nDigite o Segundo Número a ser Recursivo:\n");
-    scanf("%d", &num2);
-  } while(num1 < 0 || num2 < 0);
+    do {
+      printf("\n\nDigite o Primeiro Número a ser Recursivo:\n");
+      scanf("%d", &num1);
+      printf("\nDigite o Segundo Número a ser Recursivo:\n");
+      scanf("%d", &num2);
+    } while (num1 < 0 || num2 < 0);
     printf("Componentes da Multiplicação Recursiva:\n");
     printf("%d", num1);
     printf("%s", v);
