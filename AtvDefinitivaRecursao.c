@@ -19,8 +19,7 @@ int main(void) {
       printf("Digite o Número a ser Fatorado:\n");
       scanf("%d", &n);
       if (n < 0) {
-        printf("\nEsse Fatorial só é valido para números reais maiores que "
-               "zero\n");
+        printf("\nEsse Fatorial só é valido para números reais maiores que zero\n");
       } else {
         fatorial(n, 1);
       }
@@ -30,8 +29,7 @@ int main(void) {
       printf("\n\nDigite o Número de Linhas da Sequência Fibonacci:\n");
       scanf("%d", &n);
       if (n < 0) {
-        printf("\nEssa Fibonacci só é valida para números reais maiores que "
-               "zero\n");
+        printf("\nEssa Fibonacci só é valida para números reais maiores que zero\n");
       } else {
         fibonacci(n - 1, a = 1, b = 1, c = 0, p = 0, z = 0);
         // n - 1 pois o primeiro número da sequência era 0, com a = 1 se torna 1
